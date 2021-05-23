@@ -1,0 +1,27 @@
+<div class="centered">
+    <mat-card class="login-card">
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <h3>Login</h3>
+            <mat-card id="alertCard" class="alert" *ngIf="alert">
+              {{alert}}
+            </mat-card>
+            <mat-form-field class="max-width">
+                <mat-label>Email</mat-label>
+                <input matInput name="mail" formControlName="mail" placeholder="Email" type="email">
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <mat-label>Password</mat-label>
+                <input matInput name="password" formControlName="password" type="password">
+            </mat-form-field>
+            <!-- <mat-form-field class="max-width">
+                <mat-label>Phone number</mat-label>
+                <input matInput maxlength="12" name="phone" formControlName="phone" placeholder="e.g. +36303030303" type="tel">
+            </mat-form-field>
+            <br>
+            <div id="recaptcha-container"></div> -->
+            <div><button mat-raised-button class="max-width" color="primary" type="submit" [disabled]="form.invalid">LOGIN</button></div>
+            <br>
+            <div><button mat-button color="primary" (click)="navTo('/registration')" type="button">REGISTRATION</button></div>
+        </form>
+    </mat-card>
+</div>

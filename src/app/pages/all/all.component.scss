@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 16px;
+}
+
+app-call-card {
+    transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

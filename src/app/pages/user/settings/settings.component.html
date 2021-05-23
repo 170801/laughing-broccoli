@@ -1,0 +1,46 @@
+<div class="centered">
+    <mat-card>
+        <form [formGroup]="form" (ngSubmit)="save()">
+            <h3>Settings</h3>
+            <mat-form-field class="max-width">
+                <mat-label>Name</mat-label>
+                <input matInput name="name" formControlName="name" placeholder="John Smith" type="text">
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <mat-label>Phone number</mat-label>
+                <input matInput maxlength="12" name="phone" formControlName="phone" placeholder="e.g. +36303030303" type="tel">
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <mat-label>Email</mat-label>
+                <input matInput name="mail" formControlName="mail" placeholder="e.g. john.smith@mail.com" type="email">
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <mat-label>Old Password</mat-label>
+                <input matInput name="password0" formControlName="password0" type="password" required>
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <mat-label>New Password</mat-label>
+                <input matInput name="password" formControlName="password" type="password">
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <mat-label>New Password</mat-label>
+                <input matInput name="password1" formControlName="password1" type="password">
+            </mat-form-field>
+            <mat-chip-list>
+                <mat-chip *ngIf="form.errors" color="warn" class="max-width" style="margin-top: 16px;" selected>
+                    New passwords don't match.
+                </mat-chip>
+                <mat-chip *ngIf="alert" color="warn" class="max-width" style="margin-top: 16px;" selected>
+                    {{alert}}
+                </mat-chip>
+                <mat-chip *ngIf="success" color="secondary" class="max-width" style="margin-top: 16px;" selected>
+                    {{success}}
+                </mat-chip>
+            </mat-chip-list>
+            <br>
+            <div><button mat-raised-button class="max-width" color="primary" type="submit" [disabled]="form.invalid">SAVE CHANGES</button></div>
+            <br>
+            <div><button mat-raised-button class="max-width" color="secondary" type="button" (click)="dialogRef.close()">CANCEL</button></div>
+        </form>
+    </mat-card>
+</div>

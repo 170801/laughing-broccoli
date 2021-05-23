@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+table.table-hover tbody tr:hover, td:hover{
+  cursor: pointer;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn {
+    position: fixed !important;
+    bottom: 16px !important;
+    right: 16px !important;
+}
+
+.remove-btn {
+  margin: 16px;
+}

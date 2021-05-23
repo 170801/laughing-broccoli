@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a mat-button [routerLink]="['/home']">
+            Call history
+        </a>
+        <button mat-button [matMenuTriggerFor]="navMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #navMenu="matMenu">
+            <button class="navMenu" mat-menu-item *ngFor="let item of categories" [routerLink]="['/home/' + item.title]" routerLinkActive="router-link-active" >
+                <mat-icon>{{item.icon}}</mat-icon>&nbsp;{{item.title}}
+            </button>
+        </mat-menu>
+        <span style="flex: 1 1;"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+            {{user?.displayName}}&nbsp;
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openDialog()">
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </button>
+            <button mat-menu-item (click)="logout()" >
+                <mat-icon>arrow_back</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

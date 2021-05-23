@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TitleService } from './services/routing/title.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'usage-management';
+  constructor(private service: TitleService){
+    this.service.refreshTitle();
+  }
 }

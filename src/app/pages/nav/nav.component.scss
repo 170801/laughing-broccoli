@@ -1,0 +1,19 @@
+.navMenu {
+    text-transform: capitalize;
+}
+.navMenu:not(:last-child) {
+    margin-right: 16px;
+}
+a[mat-button] {
+    font-size: xx-large;
+}
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+}
+.router-link-active {
+    border-bottom: white 1px dashed;
+    border-radius: 0;
+}
