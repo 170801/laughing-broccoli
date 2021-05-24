@@ -17,10 +17,6 @@ export const routes: Routes = [
         {
             path: 'outgoing',
             loadChildren: () => import('./../outgoing/outgoing.module').then(m => m.OutgoingModule)
-        },
-        {
-            path: 'settings',
-            loadChildren: () => import('./../user/settings/settings.module').then(m => m.SettingsModule)
         }
     ],
     canActivateChild: [AuthGuard] },
